@@ -1,0 +1,605 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E8B80C402F49121600BD0233 /* AIPhotoEditorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B80C3F2F49121600BD0233 /* AIPhotoEditorApp.swift */; };
+		E8B80C422F49121600BD0233 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B80C412F49121600BD0233 /* ContentView.swift */; };
+		E8B80C442F49121900BD0233 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8B80C432F49121900BD0233 /* Assets.xcassets */; };
+		E8B80C472F49121900BD0233 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8B80C462F49121900BD0233 /* Preview Assets.xcassets */; };
+		E8B80C512F49121900BD0233 /* AIPhotoEditorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B80C502F49121900BD0233 /* AIPhotoEditorTests.swift */; };
+		E8B80C5B2F49121900BD0233 /* AIPhotoEditorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B80C5A2F49121900BD0233 /* AIPhotoEditorUITests.swift */; };
+		E8B80C5D2F49121900BD0233 /* AIPhotoEditorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B80C5C2F49121900BD0233 /* AIPhotoEditorUITestsLaunchTests.swift */; };
+		E8B80C6A2F49143A00BD0233 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B80C692F49143A00BD0233 /* EditorView.swift */; };
+		E8B80C6C2F4919F200BD0233 /* BackgroundRemover.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B80C6B2F4919F200BD0233 /* BackgroundRemover.swift */; };
+		E8B80C6E2F492EC000BD0233 /* FilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B80C6D2F492EC000BD0233 /* FilterManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E8B80C4D2F49121900BD0233 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8B80C342F49121600BD0233 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8B80C3B2F49121600BD0233;
+			remoteInfo = AIPhotoEditor;
+		};
+		E8B80C572F49121900BD0233 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8B80C342F49121600BD0233 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8B80C3B2F49121600BD0233;
+			remoteInfo = AIPhotoEditor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E8B80C3C2F49121600BD0233 /* AIPhotoEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIPhotoEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8B80C3F2F49121600BD0233 /* AIPhotoEditorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIPhotoEditorApp.swift; sourceTree = "<group>"; };
+		E8B80C412F49121600BD0233 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E8B80C432F49121900BD0233 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E8B80C462F49121900BD0233 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E8B80C4C2F49121900BD0233 /* AIPhotoEditorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIPhotoEditorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8B80C502F49121900BD0233 /* AIPhotoEditorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIPhotoEditorTests.swift; sourceTree = "<group>"; };
+		E8B80C562F49121900BD0233 /* AIPhotoEditorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIPhotoEditorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8B80C5A2F49121900BD0233 /* AIPhotoEditorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIPhotoEditorUITests.swift; sourceTree = "<group>"; };
+		E8B80C5C2F49121900BD0233 /* AIPhotoEditorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIPhotoEditorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E8B80C692F49143A00BD0233 /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
+		E8B80C6B2F4919F200BD0233 /* BackgroundRemover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundRemover.swift; sourceTree = "<group>"; };
+		E8B80C6D2F492EC000BD0233 /* FilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E8B80C392F49121600BD0233 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8B80C492F49121900BD0233 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8B80C532F49121900BD0233 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E8B80C332F49121600BD0233 = {
+			isa = PBXGroup;
+			children = (
+				E8B80C3E2F49121600BD0233 /* AIPhotoEditor */,
+				E8B80C4F2F49121900BD0233 /* AIPhotoEditorTests */,
+				E8B80C592F49121900BD0233 /* AIPhotoEditorUITests */,
+				E8B80C3D2F49121600BD0233 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E8B80C3D2F49121600BD0233 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8B80C3C2F49121600BD0233 /* AIPhotoEditor.app */,
+				E8B80C4C2F49121900BD0233 /* AIPhotoEditorTests.xctest */,
+				E8B80C562F49121900BD0233 /* AIPhotoEditorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8B80C3E2F49121600BD0233 /* AIPhotoEditor */ = {
+			isa = PBXGroup;
+			children = (
+				E8B80C3F2F49121600BD0233 /* AIPhotoEditorApp.swift */,
+				E8B80C412F49121600BD0233 /* ContentView.swift */,
+				E8B80C432F49121900BD0233 /* Assets.xcassets */,
+				E8B80C452F49121900BD0233 /* Preview Content */,
+				E8B80C692F49143A00BD0233 /* EditorView.swift */,
+				E8B80C6B2F4919F200BD0233 /* BackgroundRemover.swift */,
+				E8B80C6D2F492EC000BD0233 /* FilterManager.swift */,
+			);
+			path = AIPhotoEditor;
+			sourceTree = "<group>";
+		};
+		E8B80C452F49121900BD0233 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E8B80C462F49121900BD0233 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E8B80C4F2F49121900BD0233 /* AIPhotoEditorTests */ = {
+			isa = PBXGroup;
+			children = (
+				E8B80C502F49121900BD0233 /* AIPhotoEditorTests.swift */,
+			);
+			path = AIPhotoEditorTests;
+			sourceTree = "<group>";
+		};
+		E8B80C592F49121900BD0233 /* AIPhotoEditorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E8B80C5A2F49121900BD0233 /* AIPhotoEditorUITests.swift */,
+				E8B80C5C2F49121900BD0233 /* AIPhotoEditorUITestsLaunchTests.swift */,
+			);
+			path = AIPhotoEditorUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8B80C3B2F49121600BD0233 /* AIPhotoEditor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8B80C602F49121900BD0233 /* Build configuration list for PBXNativeTarget "AIPhotoEditor" */;
+			buildPhases = (
+				E8B80C382F49121600BD0233 /* Sources */,
+				E8B80C392F49121600BD0233 /* Frameworks */,
+				E8B80C3A2F49121600BD0233 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AIPhotoEditor;
+			productName = AIPhotoEditor;
+			productReference = E8B80C3C2F49121600BD0233 /* AIPhotoEditor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E8B80C4B2F49121900BD0233 /* AIPhotoEditorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8B80C632F49121900BD0233 /* Build configuration list for PBXNativeTarget "AIPhotoEditorTests" */;
+			buildPhases = (
+				E8B80C482F49121900BD0233 /* Sources */,
+				E8B80C492F49121900BD0233 /* Frameworks */,
+				E8B80C4A2F49121900BD0233 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8B80C4E2F49121900BD0233 /* PBXTargetDependency */,
+			);
+			name = AIPhotoEditorTests;
+			productName = AIPhotoEditorTests;
+			productReference = E8B80C4C2F49121900BD0233 /* AIPhotoEditorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E8B80C552F49121900BD0233 /* AIPhotoEditorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8B80C662F49121900BD0233 /* Build configuration list for PBXNativeTarget "AIPhotoEditorUITests" */;
+			buildPhases = (
+				E8B80C522F49121900BD0233 /* Sources */,
+				E8B80C532F49121900BD0233 /* Frameworks */,
+				E8B80C542F49121900BD0233 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8B80C582F49121900BD0233 /* PBXTargetDependency */,
+			);
+			name = AIPhotoEditorUITests;
+			productName = AIPhotoEditorUITests;
+			productReference = E8B80C562F49121900BD0233 /* AIPhotoEditorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8B80C342F49121600BD0233 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					E8B80C3B2F49121600BD0233 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					E8B80C4B2F49121900BD0233 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = E8B80C3B2F49121600BD0233;
+					};
+					E8B80C552F49121900BD0233 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = E8B80C3B2F49121600BD0233;
+					};
+				};
+			};
+			buildConfigurationList = E8B80C372F49121600BD0233 /* Build configuration list for PBXProject "AIPhotoEditor" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E8B80C332F49121600BD0233;
+			productRefGroup = E8B80C3D2F49121600BD0233 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8B80C3B2F49121600BD0233 /* AIPhotoEditor */,
+				E8B80C4B2F49121900BD0233 /* AIPhotoEditorTests */,
+				E8B80C552F49121900BD0233 /* AIPhotoEditorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E8B80C3A2F49121600BD0233 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8B80C472F49121900BD0233 /* Preview Assets.xcassets in Resources */,
+				E8B80C442F49121900BD0233 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8B80C4A2F49121900BD0233 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8B80C542F49121900BD0233 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8B80C382F49121600BD0233 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8B80C6E2F492EC000BD0233 /* FilterManager.swift in Sources */,
+				E8B80C6A2F49143A00BD0233 /* EditorView.swift in Sources */,
+				E8B80C422F49121600BD0233 /* ContentView.swift in Sources */,
+				E8B80C6C2F4919F200BD0233 /* BackgroundRemover.swift in Sources */,
+				E8B80C402F49121600BD0233 /* AIPhotoEditorApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8B80C482F49121900BD0233 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8B80C512F49121900BD0233 /* AIPhotoEditorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8B80C522F49121900BD0233 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8B80C5D2F49121900BD0233 /* AIPhotoEditorUITestsLaunchTests.swift in Sources */,
+				E8B80C5B2F49121900BD0233 /* AIPhotoEditorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E8B80C4E2F49121900BD0233 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8B80C3B2F49121600BD0233 /* AIPhotoEditor */;
+			targetProxy = E8B80C4D2F49121900BD0233 /* PBXContainerItemProxy */;
+		};
+		E8B80C582F49121900BD0233 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8B80C3B2F49121600BD0233 /* AIPhotoEditor */;
+			targetProxy = E8B80C572F49121900BD0233 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E8B80C5E2F49121900BD0233 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E8B80C5F2F49121900BD0233 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E8B80C612F49121900BD0233 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AIPhotoEditor/Preview Content\"";
+				DEVELOPMENT_TEAM = TAG65K9ZJM;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.preeti.AIPhotoEditor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E8B80C622F49121900BD0233 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AIPhotoEditor/Preview Content\"";
+				DEVELOPMENT_TEAM = TAG65K9ZJM;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.preeti.AIPhotoEditor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E8B80C642F49121900BD0233 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TAG65K9ZJM;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.preeti.AIPhotoEditorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AIPhotoEditor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AIPhotoEditor";
+			};
+			name = Debug;
+		};
+		E8B80C652F49121900BD0233 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TAG65K9ZJM;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.preeti.AIPhotoEditorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AIPhotoEditor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AIPhotoEditor";
+			};
+			name = Release;
+		};
+		E8B80C672F49121900BD0233 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TAG65K9ZJM;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.preeti.AIPhotoEditorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AIPhotoEditor;
+			};
+			name = Debug;
+		};
+		E8B80C682F49121900BD0233 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TAG65K9ZJM;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.preeti.AIPhotoEditorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AIPhotoEditor;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E8B80C372F49121600BD0233 /* Build configuration list for PBXProject "AIPhotoEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8B80C5E2F49121900BD0233 /* Debug */,
+				E8B80C5F2F49121900BD0233 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8B80C602F49121900BD0233 /* Build configuration list for PBXNativeTarget "AIPhotoEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8B80C612F49121900BD0233 /* Debug */,
+				E8B80C622F49121900BD0233 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8B80C632F49121900BD0233 /* Build configuration list for PBXNativeTarget "AIPhotoEditorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8B80C642F49121900BD0233 /* Debug */,
+				E8B80C652F49121900BD0233 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8B80C662F49121900BD0233 /* Build configuration list for PBXNativeTarget "AIPhotoEditorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8B80C672F49121900BD0233 /* Debug */,
+				E8B80C682F49121900BD0233 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E8B80C342F49121600BD0233 /* Project object */;
+}
