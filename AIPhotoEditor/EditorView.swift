@@ -13,6 +13,8 @@ struct EditorView: View {
     @State private var isProcessing = false
     @State private var showAlert = false
     @State private var selectedFilter = 0
+    @State private var faceRects: [CGRect] = []
+    @State private var showFaceBoxes = false
 
     var displayImage: UIImage {
         editedImage ?? image
@@ -27,6 +29,27 @@ struct EditorView: View {
                 .frame(maxWidth: .infinity)
                 .frame(height: 380)
                 .background(Color.gray.opacity(0.2))
+                .overlay {
+                        if showFaceBoxes {
+                            GeometryReader { geo in
+                                ForEach(Array(faceRects.enumerated()), id: \.offset) { _, rect in
+                                    let scaleX = geo.size.width / displayImage.size.width
+                                    let scaleY = geo.size.height / displayImage.size.height
+                                    let scale = min(scaleX, scaleY)
+                                    let offsetX = (geo.size.width - displayImage.size.width * scale) / 2
+                                    let offsetY = (geo.size.height - displayImage.size.height * scale) / 2
+
+                                    Rectangle()
+                                        .stroke(Color.yellow, lineWidth: 2)
+                                        .frame(width: rect.width * scale, height: rect.height * scale)
+                                        .position(
+                                            x: rect.midX * scale + offsetX,
+                                            y: rect.midY * scale + offsetY
+                                        )
+                                }
+                            }
+                        }
+                    }
                 .overlay {
                     if isProcessing {
                         ZStack {
@@ -85,6 +108,12 @@ struct EditorView: View {
                         ToolButton(icon: "arrow.uturn.backward", title: "Reset") {
                             editedImage = nil
                             selectedFilter = 0
+                        }
+                        ToolButton(icon: "wand.and.stars", title: "Enhance") {
+                            enhancePhoto()
+                        }
+                        ToolButton(icon: "face.smiling", title: "Faces") {
+                            detectFaces()
                         }
                     }
                     .padding()
@@ -147,6 +176,28 @@ struct EditorView: View {
            let window = windowScene.windows.first,
            let rootVC = window.rootViewController {
             rootVC.present(activityController, animated: true)
+        }
+    }
+    
+    private func enhancePhoto() {
+        isProcessing = true
+        DispatchQueue.global(qos: .userInitiated).async {
+            let result = AutoEnhancer.enhance(image: image)
+            DispatchQueue.main.async {
+                isProcessing = false
+                if let result {
+                    editedImage = result
+                }
+            }
+        }
+    }
+    
+    private func detectFaces() {
+        isProcessing = true
+        FaceDetector.detectFaces(in: displayImage) { rects in
+            isProcessing = false
+            faceRects = rects
+            showFaceBoxes = true
         }
     }
 }

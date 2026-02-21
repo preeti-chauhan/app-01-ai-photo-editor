@@ -5,7 +5,7 @@
 //  Created by Preeti Chauhan on 2/20/26.
 //
 
-import Foundation
+import Vision
 import CoreImage
 import UIKit
 
@@ -49,7 +49,7 @@ class FilterManager {
     ]
 
     static func apply(filter: PhotoFilter, to image: UIImage) -> UIImage? {
-        let fixedImage = image.fixedOrientation() // add this line
+        let fixedImage = image.fixedOrientation()
         guard let cgImage = fixedImage.cgImage else { return nil }
         let ciImage = CIImage(cgImage: cgImage)
 
@@ -74,3 +74,70 @@ extension UIImage {
         return normalizedImage ?? self
     }
 }
+
+class AutoEnhancer {
+    static func enhance(image: UIImage) -> UIImage? {
+        guard let cgImage = image.fixedOrientation().cgImage else { return nil }
+        let ciImage = CIImage(cgImage: cgImage)
+
+        // Auto enhance adjustments
+        let adjustments = ciImage.autoAdjustmentFilters()
+
+        var enhancedImage = ciImage
+        for filter in adjustments {
+            filter.setValue(enhancedImage, forKey: kCIInputImageKey)
+            if let output = filter.outputImage {
+                enhancedImage = output
+            }
+        }
+
+        let context = CIContext()
+        guard let outputCG = context.createCGImage(enhancedImage, from: enhancedImage.extent) else {
+            return nil
+        }
+
+        return UIImage(cgImage: outputCG)
+    }
+}
+
+class FaceDetector {
+    static func detectFaces(in image: UIImage, completion: @escaping ([CGRect]) -> Void) {
+        guard let cgImage = image.fixedOrientation().cgImage else {
+            completion([])
+            return
+        }
+
+        let request = VNDetectFaceRectanglesRequest { request, error in
+            guard let results = request.results as? [VNFaceObservation], error == nil else {
+                completion([])
+                return
+            }
+
+            // Convert Vision coordinates to UIKit coordinates
+            let imageSize = CGSize(width: cgImage.width, height: cgImage.height)
+            let faceRects = results.map { observation -> CGRect in
+                let boundingBox = observation.boundingBox
+                return CGRect(
+                    x: boundingBox.minX * imageSize.width,
+                    y: (1 - boundingBox.maxY) * imageSize.height,
+                    width: boundingBox.width * imageSize.width,
+                    height: boundingBox.height * imageSize.height
+                )
+            }
+
+            DispatchQueue.main.async {
+                completion(faceRects)
+            }
+        }
+
+        let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
+        DispatchQueue.global(qos: .userInitiated).async {
+            try? handler.perform([request])
+        }
+    }
+}
+
+
+
+
+

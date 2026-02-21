@@ -9,18 +9,20 @@ An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and trans
 ## Features
 
 - **AI Background Removal** — Remove backgrounds from portrait photos using Apple's Vision framework
+- **AI Auto Enhance** — Automatically adjusts exposure, contrast, saturation and white balance
 - **8 Photo Filters** — Original, Vivid, Mono, Fade, Chrome, Noir, Warm, Cool
-- **Photo Import** — Import photos directly from your iPhone photo library
-- **Export & Share** — Save edited photos or share to Instagram, WhatsApp, AirDrop and more
+- **Face Detection** — Detects and highlights faces in photos using Vision framework
+- **Photo Import** — Import photos directly from your photo library
+- **Export and Share** — Save edited photos or share to other apps
 - **Works Offline** — All AI processing runs on-device using iPhone's Neural Engine
 
-## Technologies Used
+## Technologies
 
 | Technology | Purpose |
 |---|---|
 | SwiftUI | UI framework |
-| Vision | AI person segmentation & background removal |
-| Core Image | Photo filters and processing |
+| Vision | AI person segmentation, background removal, face detection |
+| Core Image | Photo filters and auto enhancement |
 | Core ML | On-device machine learning |
 | PhotosUI | Photo library access |
 
@@ -30,7 +32,7 @@ An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and trans
 - Xcode 16+
 - iPhone with Neural Engine (iPhone XS or later)
 
-## How to Run
+## Getting Started
 
 1. Clone the repository
 ```bash
@@ -42,7 +44,7 @@ git clone https://github.com/preeti-chauhan/app-01-ai-photo-editor.git
 
 ## Part of 10 Apps Series
 
-This is **App 01** of a series of 10 iOS apps built with SwiftUI.
+This is App 01 of a series of 10 iOS apps built with SwiftUI.
 
 | App | Name | Status |
 |---|---|---|
