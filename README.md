@@ -8,7 +8,7 @@ An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and trans
 
 <table><tr>
   <td align="center"><b>Original Photo</b><br/><img src="photos/original.jpeg" height="500"/></td>
-  <td align="center"><b>In App (Original filter)</b><br/><img src="photos/Screenshots/filter-original.png" height="500"/></td>
+  <td align="center"><b>Original Photo (Simulator)</b><br/><img src="photos/Screenshots/filter-original.png" height="500"/></td>
 </tr></table>
 
 ### Filter Results (Simulator)
