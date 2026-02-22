@@ -13,8 +13,8 @@ An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and trans
 ### Auto Enhance
 
 <table><tr>
-  <td align="center"><b>Original</b><br/><img src="photos/Screenshots/monalisa-original.png" height="500"/></td>
-  <td align="center"><b>Auto Enhanced</b><br/><img src="photos/Screenshots/monalisa-enhanced.png" height="500"/></td>
+  <td align="center"><b>Original</b><br/><img src="photos/Screenshots/monalisa-original.png" height="400"/></td>
+  <td align="center"><b>Auto Enhanced</b><br/><img src="photos/Screenshots/monalisa-enhanced.png" height="400"/></td>
 </tr></table>
 
 ## Features
@@ -25,7 +25,7 @@ An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and trans
 - **Face Detection** — Detects and highlights faces in photos using Vision framework
 - **Photo Import** — Import photos directly from your photo library
 - **Export and Share** — Save edited photos or share to other apps
-- **Works Offline** — All AI processing runs on-device using iPhone's Neural Engine
+- **Works Offline** — No internet required; all processing runs on-device
 
 ## Technologies
 
@@ -34,7 +34,6 @@ An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and trans
 | SwiftUI | UI framework |
 | Vision | AI person segmentation, background removal, face detection |
 | Core Image | Photo filters and auto enhancement |
-| Core ML | On-device machine learning |
 | PhotosUI | Photo library access |
 
 ## Requirements
