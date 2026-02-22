@@ -17,6 +17,13 @@ An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and trans
 |:---:|:---:|:---:|:---:|
 | <img src="photos/Screenshots/filter-vivid.png" width="180"/> | <img src="photos/Screenshots/filter-mono.png" width="180"/> | <img src="photos/Screenshots/filter-fade.png" width="180"/> | <img src="photos/Screenshots/filter-chrome.png" width="180"/> |
 
+### Auto Enhance (Simulator)
+
+<table><tr>
+  <td align="center"><b>Original</b><br/><img src="photos/Screenshots/monalisa-original.png" height="500"/></td>
+  <td align="center"><b>Auto Enhanced</b><br/><img src="photos/Screenshots/monalisa-enhanced.png" height="500"/></td>
+</tr></table>
+
 ## Features
 
 - **AI Background Removal** — Remove backgrounds from portrait photos using Apple's Vision framework
