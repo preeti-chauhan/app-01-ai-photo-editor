@@ -5,13 +5,17 @@ An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and trans
 ## Screenshots
 
 ### Sample Photo
-<img src="photos/original.jpeg" width="400"/>
+
+<table><tr>
+  <td align="center"><b>Original Photo</b><br/><img src="photos/original.jpeg" width="380"/></td>
+  <td align="center"><b>In App (Original filter)</b><br/><img src="photos/Screenshots/filter-original.png" width="380"/></td>
+</tr></table>
 
 ### Filter Results (Simulator)
 
-| Original | Vivid | Mono | Fade | Chrome |
-|:---:|:---:|:---:|:---:|:---:|
-| <img src="photos/Screenshots/filter-original.png" width="160"/> | <img src="photos/Screenshots/filter-vivid.png" width="160"/> | <img src="photos/Screenshots/filter-mono.png" width="160"/> | <img src="photos/Screenshots/filter-fade.png" width="160"/> | <img src="photos/Screenshots/filter-chrome.png" width="160"/> |
+| Vivid | Mono | Fade | Chrome |
+|:---:|:---:|:---:|:---:|
+| <img src="photos/Screenshots/filter-vivid.png" width="180"/> | <img src="photos/Screenshots/filter-mono.png" width="180"/> | <img src="photos/Screenshots/filter-fade.png" width="180"/> | <img src="photos/Screenshots/filter-chrome.png" width="180"/> |
 
 ## Features
 
