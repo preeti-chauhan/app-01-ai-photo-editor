@@ -46,7 +46,7 @@ An AI-powered photo editing iOS app built with SwiftUI — a hands-on project to
   <td align="center"><b>Original</b><br/><img src="photos/Screenshots/bg-original.png" height="380"/></td>
   <td align="center"><b>Transparent</b><br/><img src="photos/Screenshots/bg-transparent.png" height="380"/></td>
   <td align="center"><b>Color Background</b><br/><img src="photos/Screenshots/bg-color-green.png" height="380"/></td>
-  <td align="center"><b>Photo Background (Magnolias)</b><br/><img src="photos/Screenshots/bg-photo-result.png" height="380"/></td>
+  <td align="center"><b>Photo Background</b><br/><img src="photos/Screenshots/bg-photo-result.png" height="380"/></td>
 </tr></table>
 
 ## Technologies
