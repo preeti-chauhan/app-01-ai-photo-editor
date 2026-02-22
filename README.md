@@ -25,7 +25,7 @@ An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and trans
 - **Face Detection** — Detects and highlights faces in photos using Vision framework
 - **Photo Import** — Import photos directly from your photo library
 - **Export and Share** — Save edited photos or share to other apps
-- **Works Offline** — No internet required; all processing runs on-device
+- **Works Offline** — All AI processing runs on-device
 
 ## Technologies
 
