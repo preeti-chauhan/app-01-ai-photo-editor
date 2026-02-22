@@ -16,9 +16,13 @@ An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and trans
 
 ### Filter Results
 
-| Original | Vivid | Mono | Fade | Chrome |
-|:---:|:---:|:---:|:---:|:---:|
-| <img src="photos/Screenshots/filter-original.png" width="150"/> | <img src="photos/Screenshots/filter-vivid.png" width="150"/> | <img src="photos/Screenshots/filter-mono.png" width="150"/> | <img src="photos/Screenshots/filter-fade.png" width="150"/> | <img src="photos/Screenshots/filter-chrome.png" width="150"/> |
+| Original | Vivid | Mono | Fade |
+|:---:|:---:|:---:|:---:|
+| <img src="photos/Screenshots/filter-original.png" width="180"/> | <img src="photos/Screenshots/filter-vivid.png" width="180"/> | <img src="photos/Screenshots/filter-mono.png" width="180"/> | <img src="photos/Screenshots/filter-fade.png" width="180"/> |
+
+| Chrome | Noir | Warm | Cool |
+|:---:|:---:|:---:|:---:|
+| <img src="photos/Screenshots/filter-chrome.png" width="180"/> | <img src="photos/Screenshots/filter-noir.png" width="180"/> | <img src="photos/Screenshots/filter-warm.png" width="180"/> | <img src="photos/Screenshots/filter-cool.png" width="180"/> |
 
 ### Auto Enhance
 
