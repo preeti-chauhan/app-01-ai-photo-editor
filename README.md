@@ -12,7 +12,7 @@ An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and trans
 - **AI Background Removal** — Remove backgrounds from portrait photos using Apple's Vision framework
 - **Export and Share** — Save edited photos or share to other apps
 
-## Screenshots (Simulator)
+## Simulator Screenshots
 
 ### Filter Results
 
