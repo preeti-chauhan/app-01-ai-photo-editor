@@ -4,18 +4,11 @@ An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and trans
 
 ## Screenshots
 
-### Sample Photo
-
-<table><tr>
-  <td align="center"><b>Original Photo</b><br/><img src="photos/Originals/daffodil.jpeg" height="500"/></td>
-  <td align="center"><b>Original Photo (Simulator)</b><br/><img src="photos/Screenshots/filter-original.png" height="500"/></td>
-</tr></table>
-
 ### Filter Results (Simulator)
 
-| Vivid | Mono | Fade | Chrome |
-|:---:|:---:|:---:|:---:|
-| <img src="photos/Screenshots/filter-vivid.png" width="180"/> | <img src="photos/Screenshots/filter-mono.png" width="180"/> | <img src="photos/Screenshots/filter-fade.png" width="180"/> | <img src="photos/Screenshots/filter-chrome.png" width="180"/> |
+| Original | Vivid | Mono | Fade | Chrome |
+|:---:|:---:|:---:|:---:|:---:|
+| <img src="photos/Screenshots/filter-original.png" width="150"/> | <img src="photos/Screenshots/filter-vivid.png" width="150"/> | <img src="photos/Screenshots/filter-mono.png" width="150"/> | <img src="photos/Screenshots/filter-fade.png" width="150"/> | <img src="photos/Screenshots/filter-chrome.png" width="150"/> |
 
 ### Auto Enhance (Simulator)
 
