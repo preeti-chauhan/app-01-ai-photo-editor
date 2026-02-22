@@ -64,12 +64,20 @@ An AI-powered photo editing iOS app built with SwiftUI — a hands-on project to
 |---|---|
 | iOS | 17.4+ |
 | Xcode | 16+ |
+| Device | iPhone XS or later for Background Removal (Neural Engine required) |
 
-> **Simulator:** Filters and auto enhance work fully. Background removal requires a real device with Neural Engine (iPhone XS or later).
->
-> **Background Removal:** Only works on photos that contain a person. Non-person photos will result in a blank image since Vision's person segmentation model only detects humans.
->
-> **Face Detection:** Detects clearly visible, forward-facing faces. Small or distant faces in the background may not be detected.
+### Feature Availability
+
+| Feature | Simulator | Device |
+|---|:---:|:---:|
+| Filters | ✅ | ✅ |
+| Auto Enhance | ✅ | ✅ |
+| Face Detection | ✅ | ✅ |
+| Background Removal | ❌ | ✅ |
+
+**Notes**
+- **Background Removal** — photo must contain a person; Vision's segmentation model only detects humans
+- **Face Detection** — works best with clearly visible, forward-facing faces; small or distant faces may not be detected
 
 ## Getting Started
 
