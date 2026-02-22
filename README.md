@@ -20,13 +20,13 @@ An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and trans
 
 ## Features
 
-- **AI Background Removal** — Remove backgrounds from portrait photos using Apple's Vision framework
-- **AI Auto Enhance** — Automatically adjusts exposure, contrast, saturation and white balance
-- **8 Photo Filters** — Original, Vivid, Mono, Fade, Chrome, Noir, Warm, Cool
-- **Face Detection** — Detects and highlights faces in photos using Vision framework
 - **Photo Import** — Import photos directly from your photo library
+- **8 Photo Filters** — Original, Vivid, Mono, Fade, Chrome, Noir, Warm, Cool
+- **AI Auto Enhance** — Automatically adjusts exposure, contrast, saturation and white balance
+- **Reset** — Restore the photo to its original state
+- **Face Detection** — Detects and highlights faces in photos using Vision framework
+- **AI Background Removal** — Remove backgrounds from portrait photos using Apple's Vision framework
 - **Export and Share** — Save edited photos or share to other apps
-- **Works Offline** — All AI processing runs on-device
 
 ## Technologies
 
