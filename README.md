@@ -55,17 +55,6 @@ git clone https://github.com/preeti-chauhan/app-01-ai-photo-editor.git
 3. Select your target device
 4. Press `Cmd + R` to build and run
 
-## Changelog
-
-### v1.1
-- Fixed background removal mask scaling — mask now correctly covers the full image using independent X/Y scaling via `CGAffineTransform` (previously used a single uniform scale that cut off non-square images)
-- Fixed face detection coordinate space — bounding boxes now use point coordinates consistent with SwiftUI layout, preventing misaligned overlays
-- Added "No Faces Detected" alert so users get feedback instead of silence
-- Reset button now clears face detection boxes
-
-### v1.0
-- Initial release with background removal, filters, auto enhance, face detection, and share
-
 ## License
 
 MIT License
