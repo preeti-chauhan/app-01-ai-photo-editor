@@ -2,15 +2,15 @@
 
 An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and transform your photos using Apple's on-device AI — no internet required.
 
-## Screenshots
+## Screenshots (Simulator)
 
-### Filter Results (Simulator)
+### Filter Results
 
 | Original | Vivid | Mono | Fade | Chrome |
 |:---:|:---:|:---:|:---:|:---:|
 | <img src="photos/Screenshots/filter-original.png" width="150"/> | <img src="photos/Screenshots/filter-vivid.png" width="150"/> | <img src="photos/Screenshots/filter-mono.png" width="150"/> | <img src="photos/Screenshots/filter-fade.png" width="150"/> | <img src="photos/Screenshots/filter-chrome.png" width="150"/> |
 
-### Auto Enhance (Simulator)
+### Auto Enhance
 
 <table><tr>
   <td align="center"><b>Original</b><br/><img src="photos/Screenshots/monalisa-original.png" height="500"/></td>
