@@ -12,7 +12,7 @@ An AI-powered photo editing iOS app built with SwiftUI — a hands-on project to
 - ✅ **AI Background Removal & Replacement** — Remove the background from photos containing a person and replace it with a solid color, custom color, or a photo from your library (photo must have a person in the frame)
 - ✅ **Export and Share** — Save edited photos or share to other apps
 
-## Simulator Screenshots
+## Screenshots
 
 ### Filter Results
 
@@ -27,9 +27,17 @@ An AI-powered photo editing iOS app built with SwiftUI — a hands-on project to
 ### Auto Enhance
 
 <table><tr>
-  <td align="center"><b>Original</b><br/><img src="photos/Screenshots/monalisa-original.png" height="400"/></td>
-  <td align="center"><b>Auto Enhanced</b><br/><img src="photos/Screenshots/monalisa-enhanced.png" height="400"/></td>
-  <td align="center"><b>Reset</b><br/><img src="photos/Screenshots/monalisa-reset.png" height="400"/></td>
+  <td align="center"><b>Original</b><br/><img src="photos/Screenshots/monalisa-original.png" width="180"/></td>
+  <td align="center"><b>Auto Enhanced</b><br/><img src="photos/Screenshots/monalisa-enhanced.png" width="180"/></td>
+  <td align="center"><b>Reset</b><br/><img src="photos/Screenshots/monalisa-reset.png" width="180"/></td>
+</tr></table>
+
+### Face Detection
+
+<table><tr>
+  <td align="center"><b>Single Face</b><br/><img src="photos/Screenshots/face-detection-audrey.png" width="180"/></td>
+  <td align="center"><b>Reset</b><br/><img src="photos/Screenshots/face-detection-audrey-reset.png" width="180"/></td>
+  <td align="center"><b>Multiple Faces</b><br/><img src="photos/Screenshots/face-detection-group.png" width="180"/></td>
 </tr></table>
 
 ### Background Removal & Replacement
@@ -39,13 +47,6 @@ An AI-powered photo editing iOS app built with SwiftUI — a hands-on project to
   <td align="center"><b>Transparent</b><br/><img src="photos/Screenshots/bg-transparent.png" width="180"/></td>
   <td align="center"><b>Color Background</b><br/><img src="photos/Screenshots/bg-color-green.png" width="180"/></td>
   <td align="center"><b>Photo Background (Magnolias)</b><br/><img src="photos/Screenshots/bg-photo-result.png" width="180"/></td>
-</tr></table>
-
-### Face Detection
-
-<table><tr>
-  <td align="center"><b>Single Face</b><br/><img src="photos/Screenshots/face-detection-audrey.png" height="400"/></td>
-  <td align="center"><b>Multiple Faces</b><br/><img src="photos/Screenshots/face-detection-group.png" height="400"/></td>
 </tr></table>
 
 ## Technologies
