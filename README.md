@@ -53,10 +53,10 @@ An AI-powered photo editing iOS app built with SwiftUI — a hands-on project to
 
 | Technology | Purpose |
 |---|---|
-| SwiftUI | UI framework |
-| Vision | AI person segmentation, background removal |
-| Core Image | Photo filters, auto enhancement, face detection |
 | PhotosUI | Photo library access |
+| SwiftUI | UI framework |
+| Core Image | Photo filters, auto enhancement, face detection |
+| Vision | AI person segmentation, background removal |
 
 ## Requirements
 
