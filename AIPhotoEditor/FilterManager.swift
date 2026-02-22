@@ -102,19 +102,20 @@ class AutoEnhancer {
 
 class FaceDetector {
     static func detectFaces(in image: UIImage, completion: @escaping ([CGRect]) -> Void) {
-        guard let cgImage = image.fixedOrientation().cgImage else {
+        let fixedImage = image.fixedOrientation()
+        guard let cgImage = fixedImage.cgImage else {
             completion([])
             return
         }
 
-        let request = VNDetectFaceRectanglesRequest { request, error in
-            guard let results = request.results as? [VNFaceObservation], error == nil else {
-                completion([])
+        let request = VNDetectFaceRectanglesRequest { request, _ in
+            guard let results = request.results as? [VNFaceObservation] else {
+                DispatchQueue.main.async { completion([]) }
                 return
             }
 
-            // Convert Vision coordinates to UIKit coordinates
-            let imageSize = CGSize(width: cgImage.width, height: cgImage.height)
+            // Convert Vision normalized coordinates (bottom-left origin) to UIKit points (top-left origin)
+            let imageSize = fixedImage.size
             let faceRects = results.map { observation -> CGRect in
                 let boundingBox = observation.boundingBox
                 return CGRect(

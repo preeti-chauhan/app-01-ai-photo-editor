@@ -12,6 +12,8 @@ struct EditorView: View {
     @State private var editedImage: UIImage?
     @State private var isProcessing = false
     @State private var showAlert = false
+    @State private var alertTitle = ""
+    @State private var alertMessage = ""
     @State private var selectedFilter = 0
     @State private var faceRects: [CGRect] = []
     @State private var showFaceBoxes = false
@@ -108,6 +110,8 @@ struct EditorView: View {
                         ToolButton(icon: "arrow.uturn.backward", title: "Reset") {
                             editedImage = nil
                             selectedFilter = 0
+                            showFaceBoxes = false
+                            faceRects = []
                         }
                         ToolButton(icon: "wand.and.stars", title: "Enhance") {
                             enhancePhoto()
@@ -137,10 +141,10 @@ struct EditorView: View {
                 }
             }
         }
-        .alert("No Person Detected", isPresented: $showAlert) {
+        .alert(alertTitle, isPresented: $showAlert) {
             Button("OK", role: .cancel) {}
         } message: {
-            Text("Please use a photo with a clearly visible person.")
+            Text(alertMessage)
         }
     }
 
@@ -160,6 +164,8 @@ struct EditorView: View {
             if let result {
                 editedImage = result
             } else {
+                alertTitle = "No Person Detected"
+                alertMessage = "Please use a photo with a clearly visible person."
                 showAlert = true
             }
         }
@@ -194,10 +200,17 @@ struct EditorView: View {
     
     private func detectFaces() {
         isProcessing = true
+        showFaceBoxes = false
         FaceDetector.detectFaces(in: displayImage) { rects in
             isProcessing = false
-            faceRects = rects
-            showFaceBoxes = true
+            if rects.isEmpty {
+                alertTitle = "No Faces Detected"
+                alertMessage = "Please use a photo with a clearly visible face."
+                showAlert = true
+            } else {
+                faceRects = rects
+                showFaceBoxes = true
+            }
         }
     }
 }

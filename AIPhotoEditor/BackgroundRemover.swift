@@ -45,10 +45,10 @@ class BackgroundRemover {
     }
 
     private static func applyMask(mask: CVPixelBuffer, to image: CGImage) -> UIImage? {
+        let scaleX = CGFloat(image.width) / CGFloat(CVPixelBufferGetWidth(mask))
+        let scaleY = CGFloat(image.height) / CGFloat(CVPixelBufferGetHeight(mask))
         let maskCI = CIImage(cvPixelBuffer: mask)
-            .applyingFilter("CIBicubicScaleTransform", parameters: [
-                "inputScale": CGFloat(image.width) / CGFloat(CVPixelBufferGetWidth(mask))
-            ])
+            .transformed(by: CGAffineTransform(scaleX: scaleX, y: scaleY))
 
         let imageCI = CIImage(cgImage: image)
 

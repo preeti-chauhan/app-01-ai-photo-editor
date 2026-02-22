@@ -4,7 +4,14 @@ An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and trans
 
 ## Screenshots
 
-> Coming soon
+### Sample Photo
+![Original photo](photos/original.jpeg)
+
+### Filter Results (Simulator)
+
+| Original | Vivid | Mono | Fade | Chrome |
+|:---:|:---:|:---:|:---:|:---:|
+| ![Original](photos/Screenshots/filter-original.png) | ![Vivid](photos/Screenshots/filter-vivid.png) | ![Mono](photos/Screenshots/filter-mono.png) | ![Fade](photos/Screenshots/filter-fade.png) | ![Chrome](photos/Screenshots/filter-chrome.png) |
 
 ## Features
 
@@ -30,7 +37,9 @@ An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and trans
 
 - iOS 17.4+
 - Xcode 16+
-- iPhone with Neural Engine (iPhone XS or later)
+- iPhone with Neural Engine (iPhone XS or later) for background removal
+
+> Face detection and filters work on simulator. Background removal requires a real device.
 
 ## Getting Started
 
@@ -42,13 +51,24 @@ git clone https://github.com/preeti-chauhan/app-01-ai-photo-editor.git
 3. Select your target device
 4. Press `Cmd + R` to build and run
 
+## Changelog
+
+### v1.1
+- Fixed background removal mask scaling — mask now correctly covers the full image using independent X/Y scaling via `CGAffineTransform` (previously used a single uniform scale that cut off non-square images)
+- Fixed face detection coordinate space — bounding boxes now use point coordinates consistent with SwiftUI layout, preventing misaligned overlays
+- Added "No Faces Detected" alert so users get feedback instead of silence
+- Reset button now clears face detection boxes
+
+### v1.0
+- Initial release with background removal, filters, auto enhance, face detection, and share
+
 ## Part of 10 Apps Series
 
 This is App 01 of a series of 10 iOS apps built with SwiftUI.
 
 | App | Name | Status |
 |---|---|---|
-| 01 | AI Photo Editor | In Progress |
+| 01 | AI Photo Editor | Complete |
 | 02 | Coming Soon | Planned |
 | 03 | Coming Soon | Planned |
 | 04 | Coming Soon | Planned |
