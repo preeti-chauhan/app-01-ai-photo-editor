@@ -76,8 +76,8 @@ An AI-powered photo editing iOS app built with SwiftUI — a hands-on project to
 | Background Removal | — | ✅ |
 
 **Notes**
-- **Background Removal** — photo must contain a person; Vision's segmentation model only detects humans
 - **Face Detection** — works best with clearly visible, forward-facing faces; small or distant faces may not be detected
+- **Background Removal** — photo must contain a person; Vision's segmentation model only detects humans
 
 ## Getting Started
 
