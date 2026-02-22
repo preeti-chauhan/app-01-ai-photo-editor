@@ -102,22 +102,22 @@ class AutoEnhancer {
 
 class FaceDetector {
     static func detectFaces(in image: UIImage, completion: @escaping ([CGRect]) -> Void) {
-        guard let cgImage = image.cgImage else {
+        // Normalize to upright orientation so Vision always receives a .up image
+        let normalizedImage = image.fixedOrientation()
+        guard let cgImage = normalizedImage.cgImage else {
             DispatchQueue.main.async { completion([]) }
             return
         }
 
-        // Pass orientation to Vision directly — avoids re-rendering the image
-        let orientation = CGImagePropertyOrientation(image.imageOrientation)
         let request = VNDetectFaceRectanglesRequest()
-        let handler = VNImageRequestHandler(cgImage: cgImage, orientation: orientation, options: [:])
+        let handler = VNImageRequestHandler(cgImage: cgImage, orientation: .up, options: [:])
 
         DispatchQueue.global(qos: .userInitiated).async {
             do {
                 try handler.perform([request])
 
                 let results = request.results ?? []
-                let imageSize = image.size // UIImage.size is orientation-aware (in points)
+                let imageSize = normalizedImage.size
 
                 // Convert Vision normalized coordinates (bottom-left origin) to UIKit points (top-left origin)
                 let faceRects = results.map { observation -> CGRect in
@@ -132,27 +132,13 @@ class FaceDetector {
 
                 DispatchQueue.main.async { completion(faceRects) }
             } catch {
+                print("Face detection error: \(error)")
                 DispatchQueue.main.async { completion([]) }
             }
         }
     }
 }
 
-private extension CGImagePropertyOrientation {
-    init(_ uiOrientation: UIImage.Orientation) {
-        switch uiOrientation {
-        case .up:            self = .up
-        case .upMirrored:    self = .upMirrored
-        case .down:          self = .down
-        case .downMirrored:  self = .downMirrored
-        case .left:          self = .left
-        case .leftMirrored:  self = .leftMirrored
-        case .right:         self = .right
-        case .rightMirrored: self = .rightMirrored
-        @unknown default:    self = .up
-        }
-    }
-}
 
 
 
