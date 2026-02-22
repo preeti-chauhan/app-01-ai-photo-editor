@@ -9,7 +9,7 @@ An AI-powered photo editing iOS app built with SwiftUI — a hands-on project to
 - ✅ **AI Auto Enhance** — Automatically adjusts exposure, contrast, saturation and white balance
 - ✅ **Reset** — Restore the photo to its original state
 - ✅ **Face Detection** — Detects and highlights faces in photos using Core Image
-- ⬜ **AI Background Removal** — Remove backgrounds from portrait photos using Apple's Vision framework
+- ✅ **AI Background Removal & Replacement** — Remove the background from photos containing a person and replace it with a solid color, custom color, or a photo from your library (photo must have a person in the frame)
 - ✅ **Export and Share** — Save edited photos or share to other apps
 
 ## Simulator Screenshots
@@ -30,6 +30,15 @@ An AI-powered photo editing iOS app built with SwiftUI — a hands-on project to
   <td align="center"><b>Original</b><br/><img src="photos/Screenshots/monalisa-original.png" height="400"/></td>
   <td align="center"><b>Auto Enhanced</b><br/><img src="photos/Screenshots/monalisa-enhanced.png" height="400"/></td>
   <td align="center"><b>Reset</b><br/><img src="photos/Screenshots/monalisa-reset.png" height="400"/></td>
+</tr></table>
+
+### Background Removal & Replacement
+
+<table><tr>
+  <td align="center"><b>Original</b><br/><img src="photos/Screenshots/bg-original.png" height="400"/></td>
+  <td align="center"><b>Transparent</b><br/><img src="photos/Screenshots/bg-transparent.png" height="400"/></td>
+  <td align="center"><b>Color Background</b><br/><img src="photos/Screenshots/bg-color-green.png" height="400"/></td>
+  <td align="center"><b>Photo Background (Magnolias)</b><br/><img src="photos/Screenshots/bg-photo-result.png" height="400"/></td>
 </tr></table>
 
 ### Face Detection
@@ -56,6 +65,8 @@ An AI-powered photo editing iOS app built with SwiftUI — a hands-on project to
 | Xcode | 16+ |
 
 > **Simulator:** Filters and auto enhance work fully. Background removal requires a real device with Neural Engine (iPhone XS or later).
+>
+> **Background Removal:** Only works on photos that contain a person. Non-person photos will result in a blank image since Vision's person segmentation model only detects humans.
 >
 > **Face Detection:** Detects clearly visible, forward-facing faces. Small or distant faces in the background may not be detected.
 

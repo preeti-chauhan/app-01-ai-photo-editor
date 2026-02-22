@@ -5,6 +5,7 @@
 //  Created by Preeti Chauhan on 2/20/26.
 //
 import SwiftUI
+import PhotosUI
 
 struct EditorView: View {
     let image: UIImage
@@ -17,6 +18,9 @@ struct EditorView: View {
     @State private var selectedFilter = 0
     @State private var faceRects: [CGRect] = []
     @State private var showFaceBoxes = false
+    @State private var personMask: CVPixelBuffer?
+    @State private var personCGImage: CGImage?
+    @State private var showBGReplacement = false
 
     var displayImage: UIImage {
         editedImage ?? image
@@ -146,6 +150,16 @@ struct EditorView: View {
         } message: {
             Text(alertMessage)
         }
+        .sheet(isPresented: $showBGReplacement) {
+            if let cgImage = personCGImage, let mask = personMask {
+                BGReplacementView(cgImage: cgImage, mask: mask) { result in
+                    editedImage = result
+                    showBGReplacement = false
+                } onCancel: {
+                    showBGReplacement = false
+                }
+            }
+        }
     }
 
     private func applyFilter(_ filter: PhotoFilter) {
@@ -159,15 +173,17 @@ struct EditorView: View {
 
     private func removeBackground() {
         isProcessing = true
-        BackgroundRemover.removeBackground(from: image) { result in
+        BackgroundRemover.computeMask(from: image) { cgImage, mask in
             isProcessing = false
-            if let result {
-                editedImage = result
-            } else {
+            guard let cgImage, let mask else {
                 alertTitle = "No Person Detected"
                 alertMessage = "Please use a photo with a clearly visible person."
                 showAlert = true
+                return
             }
+            personCGImage = cgImage
+            personMask = mask
+            showBGReplacement = true
         }
     }
 
@@ -285,6 +301,197 @@ struct ToolButton: View {
             }
             .foregroundStyle(.white)
             .frame(width: 70)
+        }
+    }
+}
+
+// MARK: - Background Replacement Sheet
+
+struct BGReplacementView: View {
+    let cgImage: CGImage
+    let mask: CVPixelBuffer
+    let onApply: (UIImage) -> Void
+    let onCancel: () -> Void
+
+    private enum BGSelection: Equatable {
+        case transparent
+        case preset(Int)
+        case custom
+        case photo
+    }
+
+    @State private var bgSelection: BGSelection = .transparent
+    @State private var customColor = Color.white
+    @State private var bgPhoto: UIImage?
+    @State private var bgPhotoItem: PhotosPickerItem?
+    @State private var previewImage: UIImage?
+
+    private let presetColors: [UIColor] = [
+        .white, .black, .systemGray, .systemBlue, .systemGreen,
+        .systemYellow, .systemRed, .systemPink, .systemPurple,
+        .systemOrange, .cyan, .systemMint
+    ]
+
+    private var backgroundType: BackgroundType {
+        switch bgSelection {
+        case .transparent:        return .transparent
+        case .preset(let i):      return .color(presetColors[i])
+        case .custom:             return .color(UIColor(customColor))
+        case .photo:
+            if let bgPhoto { return .photo(bgPhoto) }
+            return .transparent
+        }
+    }
+
+    var body: some View {
+        NavigationStack {
+            VStack(spacing: 0) {
+
+                // Live preview
+                ZStack {
+                    CheckerboardView()
+                    if let previewImage {
+                        Image(uiImage: previewImage)
+                            .resizable()
+                            .scaledToFit()
+                    } else {
+                        ProgressView().tint(.gray)
+                    }
+                }
+                .frame(maxWidth: .infinity)
+                .frame(height: 300)
+                .clipped()
+
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 20) {
+
+                        // Color grid
+                        Text("Background Color")
+                            .font(.headline)
+
+                        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 6), spacing: 12) {
+
+                            // Transparent tile
+                            Button { select(.transparent) } label: {
+                                ZStack {
+                                    CheckerboardView()
+                                        .frame(width: 44, height: 44)
+                                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                                    if bgSelection == .transparent {
+                                        RoundedRectangle(cornerRadius: 8)
+                                            .stroke(.blue, lineWidth: 3)
+                                            .frame(width: 44, height: 44)
+                                    }
+                                }
+                            }
+
+                            // Preset color tiles
+                            ForEach(Array(presetColors.enumerated()), id: \.offset) { index, color in
+                                Button { select(.preset(index)) } label: {
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .fill(Color(uiColor: color))
+                                        .frame(width: 44, height: 44)
+                                        .overlay {
+                                            if bgSelection == .preset(index) {
+                                                RoundedRectangle(cornerRadius: 8)
+                                                    .stroke(.blue, lineWidth: 3)
+                                            }
+                                        }
+                                }
+                            }
+                        }
+
+                        // Custom color picker
+                        ColorPicker("Custom Color", selection: $customColor, supportsOpacity: false)
+                            .onChange(of: customColor) { _, _ in select(.custom) }
+
+                        Divider()
+
+                        // Photo background
+                        Text("Background Photo")
+                            .font(.headline)
+
+                        PhotosPicker(selection: $bgPhotoItem, matching: .images) {
+                            Label("Choose from Library", systemImage: "photo.on.rectangle")
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color.blue.opacity(0.1))
+                                .foregroundStyle(.blue)
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                        }
+                        .onChange(of: bgPhotoItem) { _, newItem in
+                            guard let newItem else { return }
+                            Task {
+                                if let data = try? await newItem.loadTransferable(type: Data.self),
+                                   let uiImage = UIImage(data: data) {
+                                    bgPhoto = uiImage
+                                    if bgSelection == .photo {
+                                        updatePreview()  // selection didn't change, call directly
+                                    } else {
+                                        select(.photo)   // triggers updatePreview via select()
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .padding()
+                }
+            }
+            .navigationTitle("Replace Background")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel", action: onCancel)
+                }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Apply") {
+                        if let previewImage { onApply(previewImage) }
+                    }
+                    .disabled(previewImage == nil)
+                }
+            }
+            .onAppear { updatePreview() }
+        }
+    }
+
+    private func select(_ selection: BGSelection) {
+        bgSelection = selection
+        updatePreview()
+    }
+
+    private func updatePreview() {
+        let bg = backgroundType
+        let cgImg = cgImage
+        let msk = mask
+        DispatchQueue.global(qos: .userInitiated).async {
+            let result = BackgroundRemover.applyBackground(bg, mask: msk, to: cgImg)
+            DispatchQueue.main.async { previewImage = result }
+        }
+    }
+}
+
+// MARK: - Checkerboard (transparency indicator)
+
+struct CheckerboardView: View {
+    var body: some View {
+        Canvas { context, size in
+            let tileSize: CGFloat = 12
+            let cols = Int(ceil(size.width / tileSize))
+            let rows = Int(ceil(size.height / tileSize))
+            for row in 0..<rows {
+                for col in 0..<cols {
+                    let isLight = (row + col) % 2 == 0
+                    context.fill(
+                        Path(CGRect(
+                            x: CGFloat(col) * tileSize,
+                            y: CGFloat(row) * tileSize,
+                            width: tileSize,
+                            height: tileSize
+                        )),
+                        with: .color(isLight ? Color(white: 0.85) : Color(white: 0.65))
+                    )
+                }
+            }
         }
     }
 }
