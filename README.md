@@ -32,6 +32,13 @@ An AI-powered photo editing iOS app built with SwiftUI — a hands-on project to
   <td align="center"><b>Reset</b><br/><img src="photos/Screenshots/monalisa-reset.png" height="400"/></td>
 </tr></table>
 
+### Face Detection
+
+<table><tr>
+  <td align="center"><b>Single Face</b><br/><img src="photos/Screenshots/face-detection-audrey.png" height="400"/></td>
+  <td align="center"><b>Multiple Faces</b><br/><img src="photos/Screenshots/face-detection-group.png" height="400"/></td>
+</tr></table>
+
 ## Technologies
 
 | Technology | Purpose |
@@ -48,7 +55,9 @@ An AI-powered photo editing iOS app built with SwiftUI — a hands-on project to
 | iOS | 17.4+ |
 | Xcode | 16+ |
 
-> **Simulator:** Filters and auto enhance work fully. Face detection requires a close-up portrait photo. Background removal requires a real device with Neural Engine (iPhone XS or later).
+> **Simulator:** Filters and auto enhance work fully. Background removal requires a real device with Neural Engine (iPhone XS or later).
+>
+> **Face Detection:** Detects clearly visible, forward-facing faces. Small or distant faces in the background may not be detected.
 
 ## Getting Started
 
