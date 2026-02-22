@@ -104,36 +104,35 @@ class FaceDetector {
     static func detectFaces(in image: UIImage, completion: @escaping ([CGRect]) -> Void) {
         let fixedImage = image.fixedOrientation()
         guard let cgImage = fixedImage.cgImage else {
-            completion([])
+            DispatchQueue.main.async { completion([]) }
             return
         }
 
-        let request = VNDetectFaceRectanglesRequest { request, _ in
-            guard let results = request.results as? [VNFaceObservation] else {
-                DispatchQueue.main.async { completion([]) }
-                return
-            }
-
-            // Convert Vision normalized coordinates (bottom-left origin) to UIKit points (top-left origin)
-            let imageSize = fixedImage.size
-            let faceRects = results.map { observation -> CGRect in
-                let boundingBox = observation.boundingBox
-                return CGRect(
-                    x: boundingBox.minX * imageSize.width,
-                    y: (1 - boundingBox.maxY) * imageSize.height,
-                    width: boundingBox.width * imageSize.width,
-                    height: boundingBox.height * imageSize.height
-                )
-            }
-
-            DispatchQueue.main.async {
-                completion(faceRects)
-            }
-        }
-
+        let request = VNDetectFaceRectanglesRequest()
         let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
+
         DispatchQueue.global(qos: .userInitiated).async {
-            try? handler.perform([request])
+            do {
+                try handler.perform([request])
+
+                let results = (request.results as? [VNFaceObservation]) ?? []
+                let imageSize = fixedImage.size
+
+                // Convert Vision normalized coordinates (bottom-left origin) to UIKit points (top-left origin)
+                let faceRects = results.map { observation -> CGRect in
+                    let boundingBox = observation.boundingBox
+                    return CGRect(
+                        x: boundingBox.minX * imageSize.width,
+                        y: (1 - boundingBox.maxY) * imageSize.height,
+                        width: boundingBox.width * imageSize.width,
+                        height: boundingBox.height * imageSize.height
+                    )
+                }
+
+                DispatchQueue.main.async { completion(faceRects) }
+            } catch {
+                DispatchQueue.main.async { completion([]) }
+            }
         }
     }
 }

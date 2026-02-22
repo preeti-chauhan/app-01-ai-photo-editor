@@ -43,7 +43,7 @@ An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and trans
 - Xcode 16+
 - iPhone with Neural Engine (iPhone XS or later) for background removal
 
-> Face detection and filters work on simulator. Background removal requires a real device.
+> **Simulator:** Filters and auto enhance work fully. Face detection requires a close-up portrait photo where the face fills at least ~25% of the frame — group shots and distant faces will not be detected. Background removal requires a real device (Neural Engine).
 
 ## Getting Started
 
@@ -65,18 +65,6 @@ git clone https://github.com/preeti-chauhan/app-01-ai-photo-editor.git
 
 ### v1.0
 - Initial release with background removal, filters, auto enhance, face detection, and share
-
-## Part of 10 Apps Series
-
-This is App 01 of a series of 10 iOS apps built with SwiftUI.
-
-| App | Name | Status |
-|---|---|---|
-| 01 | AI Photo Editor | Complete |
-| 02 | Coming Soon | Planned |
-| 03 | Coming Soon | Planned |
-| 04 | Coming Soon | Planned |
-| 05 | Coming Soon | Planned |
 
 ## License
 
