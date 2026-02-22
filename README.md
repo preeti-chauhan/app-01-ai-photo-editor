@@ -47,9 +47,8 @@ An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and trans
 |---|---|
 | iOS | 17.4+ |
 | Xcode | 16+ |
-| Background Removal | iPhone with Neural Engine (XS or later) |
 
-> **Simulator:** Filters and auto enhance work fully. Face detection requires a close-up portrait photo where the face fills at least ~25% of the frame — group shots and distant faces will not be detected. Background removal requires a real device (Neural Engine).
+> **Simulator:** Filters and auto enhance work fully. Face detection requires a close-up portrait photo. Background removal requires a real device with Neural Engine (iPhone XS or later).
 
 ## Getting Started
 
