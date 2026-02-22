@@ -8,7 +8,7 @@ An AI-powered photo editing iOS app built with SwiftUI — a hands-on project to
 - ✅ **8 Photo Filters** — Original, Vivid, Mono, Fade, Chrome, Noir, Warm, Cool
 - ✅ **AI Auto Enhance** — Automatically adjusts exposure, contrast, saturation and white balance
 - ✅ **Reset** — Restore the photo to its original state
-- ⬜ **Face Detection** — Detects and highlights faces in photos using Vision framework
+- ✅ **Face Detection** — Detects and highlights faces in photos using Core Image
 - ⬜ **AI Background Removal** — Remove backgrounds from portrait photos using Apple's Vision framework
 - ✅ **Export and Share** — Save edited photos or share to other apps
 
@@ -37,8 +37,8 @@ An AI-powered photo editing iOS app built with SwiftUI — a hands-on project to
 | Technology | Purpose |
 |---|---|
 | SwiftUI | UI framework |
-| Vision | AI person segmentation, background removal, face detection |
-| Core Image | Photo filters and auto enhancement |
+| Vision | AI person segmentation, background removal |
+| Core Image | Photo filters, auto enhancement, face detection |
 | PhotosUI | Photo library access |
 
 ## Requirements
