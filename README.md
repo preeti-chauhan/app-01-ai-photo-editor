@@ -1,6 +1,6 @@
 # App 01 — AI Photo Editor
 
-An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and transform your photos using Apple's on-device AI — no internet required.
+An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and transform your photos using Apple's on-device AI.
 
 ## Screenshots (Simulator)
 
