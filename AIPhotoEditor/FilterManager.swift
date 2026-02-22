@@ -5,7 +5,6 @@
 //  Created by Preeti Chauhan on 2/20/26.
 //
 
-import Vision
 import CoreImage
 import UIKit
 
@@ -102,39 +101,33 @@ class AutoEnhancer {
 
 class FaceDetector {
     static func detectFaces(in image: UIImage, completion: @escaping ([CGRect]) -> Void) {
-        // Normalize to upright orientation so Vision always receives a .up image
         let normalizedImage = image.fixedOrientation()
         guard let cgImage = normalizedImage.cgImage else {
             DispatchQueue.main.async { completion([]) }
             return
         }
 
-        let request = VNDetectFaceRectanglesRequest()
-        let handler = VNImageRequestHandler(cgImage: cgImage, orientation: .up, options: [:])
-
         DispatchQueue.global(qos: .userInitiated).async {
-            do {
-                try handler.perform([request])
+            let ciImage = CIImage(cgImage: cgImage)
+            let detector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])
+            let features = detector?.features(in: ciImage) as? [CIFaceFeature] ?? []
 
-                let results = request.results ?? []
-                let imageSize = normalizedImage.size
+            let imageSize = normalizedImage.size
+            let scale = normalizedImage.scale
 
-                // Convert Vision normalized coordinates (bottom-left origin) to UIKit points (top-left origin)
-                let faceRects = results.map { observation -> CGRect in
-                    let boundingBox = observation.boundingBox
-                    return CGRect(
-                        x: boundingBox.minX * imageSize.width,
-                        y: (1 - boundingBox.maxY) * imageSize.height,
-                        width: boundingBox.width * imageSize.width,
-                        height: boundingBox.height * imageSize.height
-                    )
-                }
-
-                DispatchQueue.main.async { completion(faceRects) }
-            } catch {
-                print("Face detection error: \(error)")
-                DispatchQueue.main.async { completion([]) }
+            // CIFaceFeature.bounds are in pixel coordinates with bottom-left origin
+            // Convert to UIKit points with top-left origin
+            let faceRects = features.map { feature -> CGRect in
+                let bounds = feature.bounds
+                return CGRect(
+                    x: bounds.minX / scale,
+                    y: imageSize.height - bounds.maxY / scale,
+                    width: bounds.width / scale,
+                    height: bounds.height / scale
+                )
             }
+
+            DispatchQueue.main.async { completion(faceRects) }
         }
     }
 }
