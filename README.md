@@ -2,6 +2,16 @@
 
 An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and transform your photos using Apple's on-device AI.
 
+## Features
+
+- **Photo Import** — Import photos directly from your photo library
+- **8 Photo Filters** — Original, Vivid, Mono, Fade, Chrome, Noir, Warm, Cool
+- **AI Auto Enhance** — Automatically adjusts exposure, contrast, saturation and white balance
+- **Reset** — Restore the photo to its original state
+- **Face Detection** — Detects and highlights faces in photos using Vision framework
+- **AI Background Removal** — Remove backgrounds from portrait photos using Apple's Vision framework
+- **Export and Share** — Save edited photos or share to other apps
+
 ## Screenshots (Simulator)
 
 ### Filter Results
@@ -17,16 +27,6 @@ An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and trans
   <td align="center"><b>Auto Enhanced</b><br/><img src="photos/Screenshots/monalisa-enhanced.png" height="400"/></td>
   <td align="center"><b>Reset</b><br/><img src="photos/Screenshots/monalisa-reset.png" height="400"/></td>
 </tr></table>
-
-## Features
-
-- **Photo Import** — Import photos directly from your photo library
-- **8 Photo Filters** — Original, Vivid, Mono, Fade, Chrome, Noir, Warm, Cool
-- **AI Auto Enhance** — Automatically adjusts exposure, contrast, saturation and white balance
-- **Reset** — Restore the photo to its original state
-- **Face Detection** — Detects and highlights faces in photos using Vision framework
-- **AI Background Removal** — Remove backgrounds from portrait photos using Apple's Vision framework
-- **Export and Share** — Save edited photos or share to other apps
 
 ## Technologies
 
