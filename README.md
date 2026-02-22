@@ -15,6 +15,7 @@ An AI-powered photo editing iOS app built with SwiftUI. Edit, enhance, and trans
 <table><tr>
   <td align="center"><b>Original</b><br/><img src="photos/Screenshots/monalisa-original.png" height="400"/></td>
   <td align="center"><b>Auto Enhanced</b><br/><img src="photos/Screenshots/monalisa-enhanced.png" height="400"/></td>
+  <td align="center"><b>Reset</b><br/><img src="photos/Screenshots/monalisa-reset.png" height="400"/></td>
 </tr></table>
 
 ## Features
