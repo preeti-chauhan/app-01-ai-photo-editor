@@ -73,7 +73,7 @@ An AI-powered photo editing iOS app built with SwiftUI — a hands-on project to
 | Filters | ✅ | ✅ |
 | Auto Enhance | ✅ | ✅ |
 | Face Detection | ✅ | ✅ |
-| Background Removal | ❌ | ✅ |
+| Background Removal | — | ✅ |
 
 **Notes**
 - **Background Removal** — photo must contain a person; Vision's segmentation model only detects humans
