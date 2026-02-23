@@ -20,35 +20,35 @@ An AI-powered photo editing iOS app built with SwiftUI — a hands-on project to
 
 | Original | Vivid | Mono | Fade |
 |:---:|:---:|:---:|:---:|
-| <img src="photos/Screenshots/filter-original.png" width="180"/> | <img src="photos/Screenshots/filter-vivid.png" width="180"/> | <img src="photos/Screenshots/filter-mono.png" width="180"/> | <img src="photos/Screenshots/filter-fade.png" width="180"/> |
+| <img src="photos/Screenshots/cropped/filter-original.png" width="180"/> | <img src="photos/Screenshots/cropped/filter-vivid.png" width="180"/> | <img src="photos/Screenshots/cropped/filter-mono.png" width="180"/> | <img src="photos/Screenshots/cropped/filter-fade.png" width="180"/> |
 
 | Chrome | Noir | Warm | Cool |
 |:---:|:---:|:---:|:---:|
-| <img src="photos/Screenshots/filter-chrome.png" width="180"/> | <img src="photos/Screenshots/filter-noir.png" width="180"/> | <img src="photos/Screenshots/filter-warm.png" width="180"/> | <img src="photos/Screenshots/filter-cool.png" width="180"/> |
+| <img src="photos/Screenshots/cropped/filter-chrome.png" width="180"/> | <img src="photos/Screenshots/cropped/filter-noir.png" width="180"/> | <img src="photos/Screenshots/cropped/filter-warm.png" width="180"/> | <img src="photos/Screenshots/cropped/filter-cool.png" width="180"/> |
 
 ### Auto Enhance
 
 <table><tr>
-  <td align="center"><b>Original</b><br/><img src="photos/Screenshots/monalisa-original.png" width="180"/></td>
-  <td align="center"><b>Auto Enhanced</b><br/><img src="photos/Screenshots/monalisa-enhanced.png" width="180"/></td>
-  <td align="center"><b>Reset</b><br/><img src="photos/Screenshots/monalisa-reset.png" width="180"/></td>
+  <td align="center"><b>Original</b><br/><img src="photos/Screenshots/cropped/monalisa-original.png" width="180"/></td>
+  <td align="center"><b>Auto Enhanced</b><br/><img src="photos/Screenshots/cropped/monalisa-enhanced.png" width="180"/></td>
+  <td align="center"><b>Reset</b><br/><img src="photos/Screenshots/cropped/monalisa-reset.png" width="180"/></td>
 </tr></table>
 
 ### Face Detection
 
 <table><tr>
-  <td align="center"><b>Single Face</b><br/><img src="photos/Screenshots/face-detection-audrey.png" width="180"/></td>
-  <td align="center"><b>Reset</b><br/><img src="photos/Screenshots/face-detection-audrey-reset.png" width="180"/></td>
-  <td align="center"><b>Multiple Faces</b><br/><img src="photos/Screenshots/face-detection-group.png" width="180"/></td>
+  <td align="center"><b>Single Face</b><br/><img src="photos/Screenshots/cropped/face-detection-audrey.png" width="180"/></td>
+  <td align="center"><b>Reset</b><br/><img src="photos/Screenshots/cropped/face-detection-audrey-reset.png" width="180"/></td>
+  <td align="center"><b>Multiple Faces</b><br/><img src="photos/Screenshots/cropped/face-detection-group.png" width="180"/></td>
 </tr></table>
 
 ### Background Removal & Replacement
 
 <table><tr>
-  <td align="center"><b>Original</b><br/><img src="photos/Screenshots/bg-original.png" height="380"/></td>
-  <td align="center"><b>Transparent</b><br/><img src="photos/Screenshots/bg-transparent.png" height="380"/></td>
-  <td align="center"><b>Color Background</b><br/><img src="photos/Screenshots/bg-color-green.png" height="380"/></td>
-  <td align="center"><b>Photo Background</b><br/><img src="photos/Screenshots/bg-photo-result.png" height="380"/></td>
+  <td align="center"><b>Original</b><br/><img src="photos/Screenshots/cropped/bg-original.png" height="380"/></td>
+  <td align="center"><b>Transparent</b><br/><img src="photos/Screenshots/cropped/bg-transparent.png" height="380"/></td>
+  <td align="center"><b>Color Background</b><br/><img src="photos/Screenshots/cropped/bg-color-green.png" height="380"/></td>
+  <td align="center"><b>Photo Background</b><br/><img src="photos/Screenshots/cropped/bg-photo-result.png" height="380"/></td>
 </tr></table>
 
 ## Technologies
