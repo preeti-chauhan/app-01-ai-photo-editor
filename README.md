@@ -2,6 +2,8 @@
 
 An AI-powered photo editing iOS app built with SwiftUI — a hands-on project to explore Vision and Core Image frameworks.
 
+*Read the blog post: [Building an AI Photo Editor](https://preeti-chauhan.com/AI-Photo-Editor/)*
+
 ## Features
 
 - ✅ **Photo Import** — Import photos directly from your photo library
